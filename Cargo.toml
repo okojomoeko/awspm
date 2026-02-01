@@ -47,7 +47,7 @@ tracing = "0.1.44"
 tracing-subscriber = "0.3.22"
 
 [target.'cfg(unix)'.dependencies]
-skim = "0.20.5"
+skim = "2.0.0"
 
 [dev-dependencies]
 assert_cmd = "2.1.2"
