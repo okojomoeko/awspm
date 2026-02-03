@@ -1,0 +1,19 @@
+<!-- about.hbs -->
+# Third Party Licenses
+
+This application uses the following third-party libraries:
+
+{{#each licenses}}
+## {{name}}
+
+**Used by:**
+{{#each used_by}}
+* [{{crate.name}} {{crate.version}}]({{crate.repository}})
+{{/each}}
+
+```text
+{{text}}
+```
+
+---
+{{/each}}
