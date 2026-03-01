@@ -30,7 +30,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 anyhow = "1.0.100"
 chrono = "0.4.43"
 clap = { version = "4.5.56", features = ["derive"] }
-clap_complete = "4.5.65"
+clap_complete = "4.5.66"
 configparser = "3.1.0"
 console = "0.16.2"
 dialoguer = { version = "0.12.0", features = ["fuzzy-select"] }
