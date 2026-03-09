@@ -98,17 +98,17 @@ impl SearchView {
             let input_data = display_items.join("\n");
 
             let mut options_builder = SkimOptionsBuilder::default();
-            options_builder.height(Some("50%"));
+            options_builder.height("50%".to_string());
             options_builder.multi(false);
             if let Some(q) = &query {
-                options_builder.query(Some(q));
+                options_builder.query(q.to_string());
             }
 
             let options = options_builder.build().map_err(|e| anyhow::anyhow!(e))?;
             let item_reader = SkimItemReader::default();
             let items = item_reader.of_bufread(Cursor::new(input_data));
 
-            let selected_items = Skim::run_with(&options, Some(items))
+            let selected_items = Skim::run_with(options, Some(items))
                 .map(|out| out.selected_items)
                 .unwrap_or_default();
 
