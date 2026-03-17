@@ -1,8 +1,9 @@
 use crate::core::error::AppError;
 use crate::core::types::Profile;
+use crate::core::utils::expand_tilde;
 use chrono::{DateTime, Utc};
 use serde::Deserialize;
-use sha3::{Digest, Sha3_256};
+use sha1::{Digest, Sha1};
 use std::fs;
 use std::path::PathBuf;
 
@@ -34,7 +35,7 @@ impl SsoService {
     /// Creates a new `SsoService`, locating the AWS SSO cache directory.
     pub fn new(custom_path: Option<String>) -> Result<Self, AppError> {
         if let Some(path_str) = custom_path {
-            return Ok(Self::with_cache_dir(PathBuf::from(path_str)));
+            return Ok(Self::with_cache_dir(expand_tilde(path_str)));
         }
         let home = dirs::home_dir().ok_or(AppError::HomeDirNotFound)?;
         Ok(Self::with_cache_dir(home.join(".aws/sso/cache")))
@@ -46,7 +47,7 @@ impl SsoService {
     }
 
     fn hash_key(&self, key: &str) -> String {
-        let mut hasher = Sha3_256::new();
+        let mut hasher = Sha1::new();
         hasher.update(key.as_bytes());
         let result = hasher.finalize();
         hex::encode(result)

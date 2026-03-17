@@ -90,6 +90,59 @@ fn test_load_empty_config() -> Result<(), AppError> {
 }
 
 #[test]
+fn test_load_sso_properties() -> Result<(), AppError> {
+    let dir = tempdir().map_err(|e| AppError::Unknown(e.into()))?;
+    let config_path = dir.path().join("config");
+    let credentials_path = dir.path().join("credentials");
+
+    let mut config_file = File::create(&config_path).map_err(AppError::IoError)?;
+    writeln!(config_file, "[profile sso-dev]").map_err(AppError::IoError)?;
+    writeln!(config_file, "sso_session = my-sso").map_err(AppError::IoError)?;
+    writeln!(config_file, "sso_start_url = https://config.start.url").map_err(AppError::IoError)?;
+
+    let mut creds_file = File::create(&credentials_path).map_err(AppError::IoError)?;
+    writeln!(creds_file, "[sso-prod]").map_err(AppError::IoError)?;
+    writeln!(creds_file, "sso_session = prod-sso").map_err(AppError::IoError)?;
+    writeln!(creds_file, "sso_start_url = https://creds.start.url").map_err(AppError::IoError)?;
+
+    let metadata_path = dir.path().join(".awspm.yaml");
+    temp_env::with_vars(
+        vec![
+            ("AWS_CONFIG_FILE", Some(config_path.as_os_str())),
+            (
+                "AWS_SHARED_CREDENTIALS_FILE",
+                Some(credentials_path.as_os_str()),
+            ),
+            ("AWSPM_METADATA_FILE", Some(metadata_path.as_os_str())),
+            ("AWS_PROFILE", None),
+            ("AWS_ACCESS_KEY_ID", None),
+        ],
+        || {
+            let store = Store::new().unwrap();
+            let profiles = store.load_profiles().unwrap();
+
+            assert_eq!(profiles.len(), 2);
+
+            let sso_dev = profiles.iter().find(|p| p.name == "sso-dev").unwrap();
+            assert_eq!(sso_dev.sso_session.as_deref(), Some("my-sso"));
+            assert_eq!(
+                sso_dev.sso_start_url.as_deref(),
+                Some("https://config.start.url")
+            );
+
+            let sso_prod = profiles.iter().find(|p| p.name == "sso-prod").unwrap();
+            assert_eq!(sso_prod.sso_session.as_deref(), Some("prod-sso"));
+            assert_eq!(
+                sso_prod.sso_start_url.as_deref(),
+                Some("https://creds.start.url")
+            );
+        },
+    );
+
+    Ok(())
+}
+
+#[test]
 fn test_ignore_irrelevant_sections() -> Result<(), AppError> {
     let dir = tempdir().map_err(|e| AppError::Unknown(e.into()))?;
     let config_path = dir.path().join("config");
