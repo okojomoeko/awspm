@@ -46,3 +46,59 @@ impl ListFilter {
             .collect()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::core::types::{Metadata, Profile};
+
+    #[test]
+    fn test_list_filter_by_tag() {
+        let p1 = Profile {
+            metadata: Some(Metadata {
+                tags: vec!["admin".to_string()],
+                ..Default::default()
+            }),
+            ..Profile::new("p1".to_string())
+        };
+        let p2 = Profile::new("p2".to_string());
+        let profiles = vec![p1, p2];
+
+        let filtered = ListFilter::filter(profiles, Some("tag:admin"));
+        assert_eq!(filtered.len(), 1);
+        assert_eq!(filtered[0].name, "p1");
+    }
+
+    #[test]
+    fn test_list_filter_by_name_strict() {
+        let p1 = Profile::new("admin-profile".to_string());
+        let p2 = Profile {
+            metadata: Some(Metadata {
+                tags: vec!["admin".to_string()],
+                ..Default::default()
+            }),
+            ..Profile::new("other".to_string())
+        };
+        let profiles = vec![p1, p2];
+
+        let filtered = ListFilter::filter(profiles, Some("name:admin"));
+        assert_eq!(filtered.len(), 1);
+        assert_eq!(filtered[0].name, "admin-profile");
+    }
+
+    #[test]
+    fn test_list_filter_general() {
+        let p1 = Profile::new("admin-profile".to_string());
+        let p2 = Profile {
+            metadata: Some(Metadata {
+                tags: vec!["admin".to_string()],
+                ..Default::default()
+            }),
+            ..Profile::new("other".to_string())
+        };
+        let profiles = vec![p1, p2];
+
+        let filtered = ListFilter::filter(profiles, Some("admin"));
+        assert_eq!(filtered.len(), 2);
+    }
+}

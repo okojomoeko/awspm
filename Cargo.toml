@@ -52,5 +52,6 @@ skim = "3.7.0"
 [dev-dependencies]
 assert_cmd = "2.1.2"
 predicates = "3.1.4"
+skim = { version = "3.7.0", features = ["cli"] }
 temp-env = "0.3.6"
 tempfile = "3.26.0"

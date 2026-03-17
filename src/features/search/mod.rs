@@ -33,12 +33,31 @@ impl SearchCommand {
         // 1. Load Data
         let store = Store::new()?;
         let global_config = store.get_global_config().unwrap_or_default();
-        let profiles = store.load_profiles()?; // Can be improved by find logic later if needed
+        let profiles = store.load_profiles()?;
 
-        // 2. Logic (Sort)
-        let sorted = SearchLogic::sort_profiles(profiles);
+        // 2. Pre-filter if target is specified and query is present
+        let filtered_profiles = if let Some(q) = &query {
+            use crate::features::list::logic::ListFilter;
+            let list_query = match target {
+                SearchTarget::Tags => Some(format!("tag:{}", q)),
+                SearchTarget::Aliases => Some(format!("alias:{}", q)),
+                SearchTarget::Name => Some(format!("name:{}", q)),
+                SearchTarget::All => None, // Let skim handle general search
+            };
 
-        // 3. View (Interactive)
+            if let Some(lq) = list_query {
+                ListFilter::filter(profiles, Some(&lq))
+            } else {
+                profiles
+            }
+        } else {
+            profiles
+        };
+
+        // 3. Logic (Sort)
+        let sorted = SearchLogic::sort_profiles(filtered_profiles);
+
+        // 4. View (Interactive)
         use crate::core::policy::ProfileSafetyPolicy;
         let policy = ProfileSafetyPolicy::new(global_config.sensitive_keywords.clone());
         let view = SearchView::new(Arc::new(RealInteractionHandler::new()), policy);

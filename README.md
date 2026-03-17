@@ -186,11 +186,14 @@ export AWS_PROFILE=$(awspm select "prod")
 
 ### 8. Update Metadata
 
-Add tags, aliases, or notes to a profile directly from the CLI:
+Add tags, aliases, or notes to a profile directly from the CLI. Multiple tags or aliases can be provided as a comma-separated list:
 
 ```bash
 # Add a tag
 awspm update my-profile --add-tag production
+
+# Add multiple tags at once
+awspm update my-profile --add-tag web,api,legacy
 
 # Add an alias
 awspm update my-profile --add-alias prod-db
