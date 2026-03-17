@@ -27,6 +27,9 @@ Do not rely solely on training data. Use tools to ensure accuracy.
 ## 3. Safety & Reliability
 * **Safe Rust Only**: `unsafe` is FORBIDDEN unless absolutely necessary (FFI etc.).
     *   **No Unsafe Tests**: NEVER use `unsafe` for environment variables in tests. Use `temp-env` crate.
+* **Cross-Platform Awareness**: ALWAYS verify `Cargo.toml` changes for cross-platform compatibility.
+    *   **Platform-Specific Deps**: Use `[target.'cfg(...)'.dependencies]` for platform-specific crates (e.g., `skim`, `nix`).
+    *   **No Hidden Globals**: Avoid adding platform-specific crates to `[dev-dependencies]` without `cfg` gates, as they apply to all platforms during tests.
 * **Error Handling**: No `unwrap()` or `expect()` in production code. Use `anyhow::Result` propagation.
 
 ## 4. Activation
