@@ -8,8 +8,6 @@ use std::sync::Arc;
 
 #[cfg(unix)]
 use skim::prelude::*;
-#[cfg(unix)]
-use std::io::Cursor;
 
 #[cfg(windows)]
 use dialoguer::{FuzzySelect, theme::ColorfulTheme};
@@ -31,7 +29,7 @@ impl SearchView {
         query: Option<String>,
     ) -> Result<Option<String>, AppError> {
         if profiles.is_empty() {
-            println!("No profiles found.");
+            println!("No profiles found matching criteria.");
             return Ok(None);
         }
 
@@ -49,7 +47,7 @@ impl SearchView {
             .unwrap_or(0)
             .max(6);
 
-        // Prepare display strings
+        // Prepare display items
         let display_items: Vec<String> = profiles
             .iter()
             .map(|p| {
@@ -106,7 +104,7 @@ impl SearchView {
 
             let options = options_builder.build().map_err(|e| anyhow::anyhow!(e))?;
             let item_reader = SkimItemReader::default();
-            let items = item_reader.of_bufread(Cursor::new(input_data));
+            let items = item_reader.of_bufread(std::io::Cursor::new(input_data));
 
             let selected_items = Skim::run_with(options, Some(items))
                 .map(|out| out.selected_items)
@@ -133,7 +131,6 @@ impl SearchView {
 
             if let Ok(index) = selection.interact_opt() {
                 if let Some(idx) = index {
-                    // dialoguer returns index, so we can get the profile directly
                     let selected_profile_name = profiles[idx].name.clone();
                     return self.finalize_selection(profiles, selected_profile_name);
                 }

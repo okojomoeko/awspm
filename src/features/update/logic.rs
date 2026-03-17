@@ -50,11 +50,20 @@ impl UpdateLogic {
         for tag in args.add_tags {
             if !current_metadata.tags.contains(&tag) {
                 current_metadata.tags.push(tag);
+            } else {
+                println!(
+                    "Tag '{}' already exists on profile '{}'.",
+                    tag, profile.name
+                );
             }
         }
-        current_metadata
-            .tags
-            .retain(|t| !args.remove_tags.contains(t));
+        for tag in args.remove_tags {
+            if current_metadata.tags.contains(&tag) {
+                current_metadata.tags.retain(|t| t != &tag);
+            } else {
+                println!("Tag '{}' not found on profile '{}'.", tag, profile.name);
+            }
+        }
 
         for alias in &args.add_aliases {
             // Check for conflicts
@@ -71,11 +80,26 @@ impl UpdateLogic {
 
             if !current_metadata.aliases.contains(alias) {
                 current_metadata.aliases.push(alias.clone());
+            } else {
+                println!(
+                    "Alias '{}' already exists on profile '{}'.",
+                    alias, profile.name
+                );
             }
         }
-        current_metadata
-            .aliases
-            .retain(|a| !args.remove_aliases.contains(a));
+        for alias in args.remove_aliases {
+            if current_metadata.aliases.contains(&alias) {
+                current_metadata.aliases.retain(|a| a != &alias);
+            } else {
+                println!("Alias '{}' not found on profile '{}'.", alias, profile.name);
+            }
+        }
+
+        // Deduplicate and sort for clean YAML output
+        current_metadata.tags.sort();
+        current_metadata.tags.dedup();
+        current_metadata.aliases.sort();
+        current_metadata.aliases.dedup();
 
         if let Some(note) = args.set_note {
             current_metadata.note = Some(note);
@@ -150,6 +174,49 @@ mod tests {
                     result.is_err(),
                     "Should fail when adding alias 'db' which conflicts with profile 'db'"
                 );
+            },
+        );
+    }
+
+    #[test]
+    fn test_update_deduplicate_tags() {
+        use std::io::Write;
+        let dir = tempdir().unwrap();
+        let home = dir.path().to_path_buf();
+        let config_path = home.join("aws_config");
+        let metadata_path = home.join(".awspm.yaml");
+
+        let mut f = std::fs::File::create(&config_path).unwrap();
+        writeln!(f, "[profile dev]").unwrap();
+
+        temp_env::with_vars(
+            [
+                ("AWSPM_METADATA_FILE", Some(metadata_path.to_str().unwrap())),
+                ("AWS_CONFIG_FILE", Some(config_path.to_str().unwrap())),
+                ("HOME", Some(home.to_str().unwrap())),
+            ],
+            || {
+                let store = Store::new().unwrap();
+                store.init_metadata_file().unwrap();
+
+                // Add tags with duplicates and out of order
+                let args = UpdateArgs {
+                    profile_name: "dev".to_string(),
+                    add_tags: vec!["z".to_string(), "a".to_string(), "z".to_string()],
+                    remove_tags: vec![],
+                    add_aliases: vec![],
+                    remove_aliases: vec![],
+                    set_note: None,
+                    unset_note: false,
+                    set_region: None,
+                    unset_region: false,
+                };
+
+                UpdateLogic::execute(&store, args).unwrap();
+
+                let profile = store.find_by_name("dev").unwrap().unwrap();
+                let tags = profile.metadata.unwrap().tags;
+                assert_eq!(tags, vec!["a".to_string(), "z".to_string()]);
             },
         );
     }

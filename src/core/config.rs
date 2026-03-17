@@ -1,5 +1,6 @@
 use crate::core::error::AppError;
 use crate::core::types::{Metadata, Profile};
+use crate::core::utils::expand_tilde;
 use configparser::ini::Ini;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -41,21 +42,21 @@ impl Store {
 
         // AWS Config Path
         let aws_config_path = if let Ok(path) = std::env::var("AWS_CONFIG_FILE") {
-            PathBuf::from(path)
+            expand_tilde(path)
         } else {
             home.join(".aws").join("config")
         };
 
         // AWS Credentials Path
         let aws_credentials_path = if let Ok(path) = std::env::var("AWS_SHARED_CREDENTIALS_FILE") {
-            PathBuf::from(path)
+            expand_tilde(path)
         } else {
             home.join(".aws").join("credentials")
         };
 
         // Metadata Path
         let metadata_path = if let Ok(path) = std::env::var("AWSPM_METADATA_FILE") {
-            PathBuf::from(path)
+            expand_tilde(path)
         } else {
             home.join(".awspm.yaml")
         };
@@ -265,11 +266,15 @@ impl Store {
             .map_err(AppError::ConfigLoadError)?;
 
         let mut profiles = Vec::new();
-        for (section, _) in map {
+        for (section, properties) in map {
             let name = section; // Credentials file uses [profile-name] or [default] directly? usually just [name]
             // Actually, AWS credentials file sections are just the profile name.
 
             let mut profile = Profile::new(name);
+            profile.region = properties.get("region").cloned().flatten();
+            profile.output = properties.get("output").cloned().flatten();
+            profile.sso_session = properties.get("sso_session").cloned().flatten();
+            profile.sso_start_url = properties.get("sso_start_url").cloned().flatten();
             profile.source = crate::core::types::ProfileSource::Credentials;
             profiles.push(profile);
         }

@@ -96,16 +96,16 @@ pub enum Commands {
         /// Profile name
         name: String,
         /// Add a tag
-        #[arg(long)]
+        #[arg(long, value_delimiter = ',')]
         add_tag: Vec<String>,
         /// Remove a tag
-        #[arg(long)]
+        #[arg(long, value_delimiter = ',')]
         remove_tag: Vec<String>,
         /// Add an alias
-        #[arg(long)]
+        #[arg(long, value_delimiter = ',')]
         add_alias: Vec<String>,
         /// Remove an alias
-        #[arg(long)]
+        #[arg(long, value_delimiter = ',')]
         remove_alias: Vec<String>,
         /// Set a note
         #[arg(long)]
