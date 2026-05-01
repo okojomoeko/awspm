@@ -50,7 +50,7 @@ tracing-subscriber = "0.3.22"
 skim = "3.7.0"
 
 [dev-dependencies]
-assert_cmd = "2.1.2"
+assert_cmd = "2.2.1"
 predicates = "3.1.4"
 temp-env = "0.3.6"
 tempfile = "3.26.0"
