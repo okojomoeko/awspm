@@ -1,0 +1,5 @@
+[tools]
+"cargo:cargo-deny" = "latest"
+"cargo:cargo-edit" = "latest"
+"cargo:cargo-about" = "latest"
+"cargo:git-cliff" = "latest"
