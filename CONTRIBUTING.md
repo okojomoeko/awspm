@@ -5,11 +5,15 @@ We aim for a high standard of code quality ("shame-free release"), so please fol
 
 ## Development Setup
 
-1.  **Prerequisites**: Ensure you have the latest stable Rust toolchain installed.
+1.  **Prerequisites**:
+    Ensure you have the latest stable Rust toolchain installed:
     ```bash
     rustup update stable
     ```
-
+    We strongly recommend installing [mise](https://mise.jdx.dev/) to manage project-specific tools (`git-cliff`, `cargo-deny`, etc.). Once `mise` is installed, simply run:
+    ```bash
+    mise install
+    ```
 
 2.  **Clone & Build**:
     ```bash
@@ -42,6 +46,13 @@ Run the unit and integration tests.
 ```bash
 cargo test
 ```
+
+### 4. Dependency Updates & Automation
+When updating dependencies, please use our automated script which runs tests, linters, license generation, and security audits in one go:
+```bash
+./scripts/upgrade_deps.sh --commit
+```
+This script ensures `Cargo.lock` is updated securely, tests pass, and `CHANGELOG.md` is automatically updated via `git-cliff`.
 
 ## Project Structure
 
