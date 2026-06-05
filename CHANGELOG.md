@@ -1,3 +1,9 @@
+## [unreleased]
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies (cargo update)
+- Upgrade major dependencies
 # Changelog
 
 All notable changes to this project will be documented in this file.

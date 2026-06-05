@@ -29,7 +29,7 @@ PERFORMANCE OF THIS SOFTWARE.
 ## BSD Zero Clause License
 
 **Used by:**
-* [doctest-file 1.0.0](https://codeberg.org/Goat7658/doctest-file/)
+* [doctest-file 1.1.1](https://codeberg.org/Goat7658/doctest-file)
 
 ```text
 BSD Zero Clause License
@@ -501,7 +501,7 @@ PERFORMANCE OF THIS SOFTWARE.
 
 **Used by:**
 * [ryu 1.0.23](https://github.com/dtolnay/ryu)
-* [serial2 0.2.34](https://github.com/de-vri-es/serial2-rs)
+* [serial2 0.2.37](https://github.com/de-vri-es/serial2-rs)
 
 ```text
 Apache License
@@ -584,7 +584,7 @@ limitations under the License.
 ## MIT License
 
 **Used by:**
-* [instability 0.3.11](https://github.com/ratatui/instability)
+* [instability 0.3.12](https://github.com/ratatui/instability)
 
 ```text
 # MIT License
@@ -756,17 +756,17 @@ SOFTWARE.
 
 **Used by:**
 * [backtrace 0.3.76](https://github.com/rust-lang/backtrace-rs)
-* [cc 1.2.56](https://github.com/rust-lang/cc-rs)
+* [cc 1.2.63](https://github.com/rust-lang/cc-rs)
 * [cfg-if 1.0.4](https://github.com/rust-lang/cfg-if)
 * [find-msvc-tools 0.1.9](https://github.com/rust-lang/cc-rs)
-* [js-sys 0.3.85](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys)
+* [js-sys 0.3.99](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys)
 * [rustc-demangle 0.1.27](https://github.com/rust-lang/rustc-demangle)
-* [socket2 0.6.3](https://github.com/rust-lang/socket2)
+* [socket2 0.6.4](https://github.com/rust-lang/socket2)
 * [wait-timeout 0.2.1](https://github.com/alexcrichton/wait-timeout)
-* [wasm-bindgen-macro-support 0.2.108](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro-support)
-* [wasm-bindgen-macro 0.2.108](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro)
-* [wasm-bindgen-shared 0.2.108](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared)
-* [wasm-bindgen 0.2.108](https://github.com/wasm-bindgen/wasm-bindgen)
+* [wasm-bindgen-macro-support 0.2.122](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro-support)
+* [wasm-bindgen-macro 0.2.122](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro)
+* [wasm-bindgen-shared 0.2.122](https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared)
+* [wasm-bindgen 0.2.122](https://github.com/wasm-bindgen/wasm-bindgen)
 
 ```text
 Copyright (c) 2014 Alex Crichton
@@ -801,7 +801,7 @@ DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [mio 1.1.1](https://github.com/tokio-rs/mio)
+* [mio 1.2.1](https://github.com/tokio-rs/mio)
 
 ```text
 Copyright (c) 2014 Carl Lerche and other MIO contributors
@@ -866,7 +866,7 @@ DEALINGS IN THE SOFTWARE.
 
 **Used by:**
 * [bitflags 1.3.2](https://github.com/bitflags/bitflags)
-* [bitflags 2.11.0](https://github.com/bitflags/bitflags)
+* [bitflags 2.12.1](https://github.com/bitflags/bitflags)
 * [log 0.4.29](https://github.com/rust-lang/log)
 * [num-traits 0.2.19](https://github.com/rust-num/num-traits)
 * [regex-automata 0.4.14](https://github.com/rust-lang/regex)
@@ -996,7 +996,7 @@ THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [either 1.15.0](https://github.com/rayon-rs/either)
+* [either 1.16.0](https://github.com/rayon-rs/either)
 * [itertools 0.14.0](https://github.com/rust-itertools/itertools)
 
 ```text
@@ -1134,7 +1134,7 @@ DEALINGS IN THE SOFTWARE.
 * [gimli 0.32.3](https://github.com/gimli-rs/gimli)
 * [heck 0.5.0](https://github.com/withoutboats/heck)
 * [unicode-normalization 0.1.25](https://github.com/unicode-rs/unicode-normalization)
-* [unicode-segmentation 1.12.0](https://github.com/unicode-rs/unicode-segmentation)
+* [unicode-segmentation 1.13.3](https://github.com/unicode-rs/unicode-segmentation)
 * [unicode-width 0.2.2](https://github.com/unicode-rs/unicode-width)
 * [unicode-xid 0.2.6](https://github.com/unicode-rs/unicode-xid)
 
@@ -1831,7 +1831,7 @@ DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [autocfg 1.5.0](https://github.com/cuviper/autocfg)
+* [autocfg 1.5.1](https://github.com/cuviper/autocfg)
 
 ```text
 Copyright (c) 2018 Josh Stone
@@ -2002,7 +2002,7 @@ DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [rand_core 0.10.0](https://github.com/rust-random/rand_core)
+* [rand_core 0.10.1](https://github.com/rust-random/rand_core)
 
 ```text
 Copyright (c) 2018-2026 The Rand Project Developers
@@ -2172,7 +2172,7 @@ THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [bumpalo 3.19.1](https://github.com/fitzgen/bumpalo)
+* [bumpalo 3.20.3](https://github.com/fitzgen/bumpalo)
 
 ```text
 Copyright (c) 2019 Nick Fitzgerald
@@ -2211,7 +2211,7 @@ DEALINGS IN THE SOFTWARE.
 * [tracing-core 0.1.36](https://github.com/tokio-rs/tracing)
 * [tracing-error 0.2.1](https://github.com/tokio-rs/tracing)
 * [tracing-log 0.2.0](https://github.com/tokio-rs/tracing)
-* [tracing-subscriber 0.3.22](https://github.com/tokio-rs/tracing)
+* [tracing-subscriber 0.3.23](https://github.com/tokio-rs/tracing)
 * [tracing 0.1.44](https://github.com/tokio-rs/tracing)
 
 ```text
@@ -2545,35 +2545,6 @@ DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [num-conv 0.2.0](https://github.com/jhpratt/num-conv)
-
-```text
-Copyright (c) 2023 Jacob Pratt
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-```
-
----
-## MIT License
-
-**Used by:**
 * [powerfmt 0.2.0](https://github.com/jhpratt/powerfmt)
 
 ```text
@@ -2666,22 +2637,22 @@ SOFTWARE.
 * [anstyle-parse 0.2.7](https://github.com/rust-cli/anstyle.git)
 * [anstyle-query 1.1.5](https://github.com/rust-cli/anstyle.git)
 * [anstyle-wincon 3.0.11](https://github.com/rust-cli/anstyle.git)
-* [anstyle 1.0.13](https://github.com/rust-cli/anstyle.git)
-* [assert_cmd 2.1.2](https://github.com/assert-rs/assert_cmd.git)
+* [anstyle 1.0.14](https://github.com/rust-cli/anstyle.git)
+* [assert_cmd 2.2.2](https://github.com/assert-rs/assert_cmd.git)
 * [clap 4.5.60](https://github.com/clap-rs/clap)
 * [clap_builder 4.5.60](https://github.com/clap-rs/clap)
 * [clap_complete 4.5.66](https://github.com/clap-rs/clap)
 * [clap_complete_nushell 4.5.10](https://github.com/clap-rs/clap)
 * [clap_derive 4.5.55](https://github.com/clap-rs/clap)
-* [clap_lex 1.0.0](https://github.com/clap-rs/clap)
+* [clap_lex 1.1.0](https://github.com/clap-rs/clap)
 * [clap_mangen 0.2.31](https://github.com/clap-rs/clap)
-* [colorchoice 1.0.4](https://github.com/rust-cli/anstyle.git)
-* [env_filter 1.0.0](https://github.com/rust-cli/env_logger)
+* [colorchoice 1.0.5](https://github.com/rust-cli/anstyle.git)
+* [env_filter 1.0.1](https://github.com/rust-cli/env_logger)
 * [env_logger 0.11.9](https://github.com/rust-cli/env_logger)
 * [is_terminal_polyfill 1.70.2](https://github.com/polyfill-rs/is_terminal_polyfill)
 * [once_cell_polyfill 1.70.2](https://github.com/polyfill-rs/once_cell_polyfill)
 * [predicates-core 1.0.10](https://github.com/assert-rs/predicates-rs)
-* [predicates-tree 1.0.12](https://github.com/assert-rs/predicates-rs/tree/master/crates/tree)
+* [predicates-tree 1.0.13](https://github.com/assert-rs/predicates-rs)
 * [predicates 3.1.4](https://github.com/assert-rs/predicates-rs)
 * [roff 0.2.2](https://github.com/rust-cli/roff-rs)
 * [roff 1.0.0](https://github.com/rust-cli/roff-rs)
@@ -2689,6 +2660,35 @@ SOFTWARE.
 
 ```text
 Copyright (c) Individual contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
+
+---
+## MIT License
+
+**Used by:**
+* [num-conv 0.2.2](https://github.com/jhpratt/num-conv)
+
+```text
+Copyright (c) Jacob Pratt
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &quot;Software&quot;), to deal
@@ -2744,7 +2744,7 @@ SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [libc 0.2.183](https://github.com/rust-lang/libc)
+* [libc 0.2.186](https://github.com/rust-lang/libc)
 
 ```text
 Copyright (c) The Rust Project Developers
@@ -2884,7 +2884,7 @@ DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [lru 0.16.3](https://github.com/jeromefroe/lru-rs.git)
+* [lru 0.16.4](https://github.com/jeromefroe/lru-rs.git)
 
 ```text
 MIT License
@@ -3287,7 +3287,7 @@ SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [compact_str 0.9.0](https://github.com/ParkMyCar/compact_str)
+* [compact_str 0.9.1](https://github.com/ParkMyCar/compact_str)
 
 ```text
 MIT License
@@ -3413,7 +3413,7 @@ SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [libredox 0.1.12](https://gitlab.redox-os.org/redox-os/libredox.git)
+* [libredox 0.1.17](https://gitlab.redox-os.org/redox-os/libredox.git)
 
 ```text
 MIT License
@@ -3475,7 +3475,7 @@ SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [line-clipping 0.3.5](https://github.com/joshka/line-clipping)
+* [line-clipping 0.3.7](https://github.com/ratatui/line-clipping)
 
 ```text
 MIT License
@@ -3636,7 +3636,7 @@ SOFTWARE.
 
 **Used by:**
 * [assert_enum_variants 0.1.2](https://github.com/JohnScience/assert_enum_variants)
-* [chrono 0.4.44](https://github.com/chronotope/chrono)
+* [chrono 0.4.45](https://github.com/chronotope/chrono)
 * [difflib 0.4.0](https://github.com/DimaKudosh/difflib)
 * [r-efi 6.0.0](https://github.com/r-efi/r-efi)
 * [ratatui-core 0.1.0](https://github.com/ratatui/ratatui)
@@ -3644,7 +3644,6 @@ SOFTWARE.
 * [ratatui-widgets 0.3.0](https://github.com/ratatui/ratatui)
 * [ratatui 0.30.0](https://github.com/ratatui/ratatui)
 * [unicode-display-width 0.3.0](https://github.com/jameslanska/unicode-display-width/)
-* [wasip2 1.0.2+wasi-0.2.9](https://github.com/bytecodealliance/wasi-rs)
 * [wasip3 0.4.0+wasi-0.3.0-rc-2026-01-06](https://github.com/bytecodealliance/wasi-rs)
 * [winapi-i686-pc-windows-gnu 0.4.0](https://github.com/retep998/winapi-rs)
 * [winapi-x86_64-pc-windows-gnu 0.4.0](https://github.com/retep998/winapi-rs)
@@ -3854,25 +3853,25 @@ SOFTWARE.
 * [color-spantrace 0.3.0](https://github.com/eyre-rs/eyre)
 * [env_home 0.1.0](https://github.com/notpeter/env-home)
 * [eyre 0.6.12](https://github.com/eyre-rs/eyre)
-* [fastrand 2.3.0](https://github.com/smol-rs/fastrand)
+* [fastrand 2.4.1](https://github.com/smol-rs/fastrand)
 * [indenter 0.3.4](https://github.com/yaahc/indenter)
 * [indoc 2.0.7](https://github.com/dtolnay/indoc)
-* [itoa 1.0.17](https://github.com/dtolnay/itoa)
+* [itoa 1.0.18](https://github.com/dtolnay/itoa)
 * [linux-raw-sys 0.12.1](https://github.com/sunfishcode/linux-raw-sys)
 * [minimal-lexical 0.2.1](https://github.com/Alexhuszagh/minimal-lexical)
-* [once_cell 1.21.3](https://github.com/matklad/once_cell)
-* [pin-project-lite 0.2.16](https://github.com/taiki-e/pin-project-lite)
-* [portable-atomic-util 0.2.5](https://github.com/taiki-e/portable-atomic)
+* [once_cell 1.21.4](https://github.com/matklad/once_cell)
+* [pin-project-lite 0.2.17](https://github.com/taiki-e/pin-project-lite)
+* [portable-atomic-util 0.2.7](https://github.com/taiki-e/portable-atomic-util)
 * [portable-atomic 1.13.1](https://github.com/taiki-e/portable-atomic)
 * [proc-macro2 1.0.106](https://github.com/dtolnay/proc-macro2)
-* [quote 1.0.44](https://github.com/dtolnay/quote)
+* [quote 1.0.45](https://github.com/dtolnay/quote)
 * [rustix 1.1.4](https://github.com/bytecodealliance/rustix)
 * [rustversion 1.0.22](https://github.com/dtolnay/rustversion)
-* [semver 1.0.27](https://github.com/dtolnay/semver)
+* [semver 1.0.28](https://github.com/dtolnay/semver)
 * [serde 1.0.228](https://github.com/serde-rs/serde)
 * [serde_core 1.0.228](https://github.com/serde-rs/serde)
 * [serde_derive 1.0.228](https://github.com/serde-rs/serde)
-* [serde_json 1.0.149](https://github.com/serde-rs/json)
+* [serde_json 1.0.150](https://github.com/serde-rs/json)
 * [serde_yaml 0.9.34+deprecated](https://github.com/dtolnay/serde-yaml)
 * [syn 2.0.117](https://github.com/dtolnay/syn)
 * [thiserror-impl 1.0.69](https://github.com/dtolnay/thiserror)
@@ -3883,7 +3882,9 @@ SOFTWARE.
 * [unicode-ident 1.0.24](https://github.com/dtolnay/unicode-ident)
 * [unsafe-libyaml 0.2.11](https://github.com/dtolnay/unsafe-libyaml)
 * [wasi 0.11.1+wasi-snapshot-preview1](https://github.com/bytecodealliance/wasi)
+* [wasip2 1.0.3+wasi-0.2.9](https://github.com/bytecodealliance/wasi-rs)
 * [wit-bindgen 0.51.0](https://github.com/bytecodealliance/wit-bindgen)
+* [wit-bindgen 0.57.1](https://github.com/bytecodealliance/wit-bindgen)
 * [zmij 1.0.21](https://github.com/dtolnay/zmij)
 
 ```text
@@ -3977,7 +3978,7 @@ SOFTWARE
 ## MIT License
 
 **Used by:**
-* [tinyvec 1.10.0](https://github.com/Lokathor/tinyvec)
+* [tinyvec 1.11.0](https://github.com/Lokathor/tinyvec)
 
 ```text
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -3992,7 +3993,7 @@ THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRES
 ## MIT License
 
 **Used by:**
-* [pulldown-cmark 0.13.1](https://github.com/raphlinus/pulldown-cmark)
+* [pulldown-cmark 0.13.4](https://github.com/raphlinus/pulldown-cmark)
 
 ```text
 The MIT License
@@ -4053,7 +4054,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [typenum 1.19.0](https://github.com/paholg/typenum)
+* [typenum 1.20.1](https://github.com/paholg/typenum)
 
 ```text
 The MIT License (MIT)
@@ -4085,7 +4086,7 @@ SOFTWARE.
 
 **Used by:**
 * [aho-corasick 1.1.4](https://github.com/BurntSushi/aho-corasick)
-* [jiff 0.2.23](https://github.com/BurntSushi/jiff)
+* [jiff 0.2.28](https://github.com/BurntSushi/jiff)
 * [memchr 2.8.0](https://github.com/BurntSushi/memchr)
 
 ```text
@@ -4213,6 +4214,7 @@ THE SOFTWARE.
 
 **Used by:**
 * [shlex 1.3.0](https://github.com/comex/rust-shlex)
+* [shlex 2.0.1](https://github.com/comex/rust-shlex)
 
 ```text
 The MIT License (MIT)
@@ -4243,7 +4245,7 @@ THE SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [kasuari 0.4.11](https://github.com/ratatui/kasuari)
+* [kasuari 0.4.12](https://github.com/ratatui/kasuari)
 
 ```text
 The MIT License (MIT)
@@ -4402,7 +4404,7 @@ SOFTWARE.
 ## MIT License
 
 **Used by:**
-* [console 0.16.2](https://github.com/console-rs/console)
+* [console 0.16.3](https://github.com/console-rs/console)
 * [dialoguer 0.12.0](https://github.com/console-rs/dialoguer)
 
 ```text
