@@ -71,3 +71,39 @@ This script ensures `Cargo.lock` is updated securely, tests pass, and `CHANGELOG
 6.  Open a Pull Request.
 
 Happy coding!
+
+## Release Process
+
+When acting as a maintainer, here is how and when to cut a new release.
+
+### When to cut a release (Tagging Policy)
+
+We follow [Semantic Versioning](https://semver.org/). You should consider cutting a new release tag when:
+- **Major (`v1.0.0`)**: Breaking changes are introduced to the CLI interface or configuration format.
+- **Minor (`v0.2.0`)**: New backward-compatible features are added (e.g., a new command or flag).
+- **Patch (`v0.1.2`)**: Bug fixes or minor internal refactoring are merged.
+
+As a general cadence for solo or small-team development:
+- Accumulate a few non-critical bug fixes before cutting a patch release.
+- Cut a minor release immediately if a highly anticipated feature is merged to `main`.
+- Always ensure `CHANGELOG.md` is updated (via `git-cliff` or `./scripts/upgrade_deps.sh`) and CI passes on `main` before tagging.
+
+### Releasing and Publishing
+
+1. **Tag the release**:
+   Update the `version` in `Cargo.toml`, commit the change, and tag the commit on the `main` branch.
+   ```bash
+   git commit -am "chore: bump version to 0.1.2"
+   git tag "v0.1.2"
+   git push origin main --tags
+   ```
+
+2. **GitHub Actions**:
+   Pushing a `v*` tag automatically triggers the `release.yml` workflow. Wait for the workflow to finish building the binaries and creating the GitHub Release.
+
+3. **Update Homebrew Tap (Semi-automated)**:
+   After the GitHub Release is successfully published and assets are uploaded, you must update the Homebrew formula in the `homebrew-awspm` repository. Use the provided script:
+   ```bash
+   ./scripts/update_brew.sh 0.1.2 ~/work/homebrew-awspm
+   ```
+   This script will safely verify the local tap directory, fetch the latest SHA256 checksums from the GitHub Release, and automatically rewrite the formula. Finally, follow the script's instructions to commit and push the updated tap repository.
