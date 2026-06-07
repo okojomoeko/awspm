@@ -91,11 +91,9 @@ As a general cadence for solo or small-team development:
 ### Releasing and Publishing
 
 1. **Tag the release**:
-   Update the `version` in `Cargo.toml`, commit the change, and tag the commit on the `main` branch.
+   Run the automated release script to bump the version in `Cargo.toml`, update `CHANGELOG.md`, commit, and push the tag to the `main` branch.
    ```bash
-   git commit -am "chore: bump version to 0.1.2"
-   git tag "v0.1.2"
-   git push origin main --tags
+   ./scripts/release.sh 0.1.2
    ```
 
 2. **GitHub Actions**:
