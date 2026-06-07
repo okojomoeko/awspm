@@ -14,6 +14,10 @@ echo "==> Bumping version to ${VERSION} in Cargo.toml..."
 sed -i.bak -e "s/^version = \".*\"/version = \"${VERSION}\"/" Cargo.toml
 rm -f Cargo.toml.bak
 
+echo "==> Updating Cargo.lock..."
+# --locked が CI でコケないように、Cargo.lock を Cargo.toml の新バージョンと同期する
+cargo update -p awspm || cargo fetch
+
 echo "==> Updating CHANGELOG.md..."
 if command -v git-cliff &> /dev/null; then
     git-cliff --tag "v${VERSION}" -o CHANGELOG.md
@@ -22,7 +26,7 @@ else
 fi
 
 echo "==> Committing and tagging v${VERSION}..."
-git add Cargo.toml CHANGELOG.md
+git add Cargo.toml Cargo.lock CHANGELOG.md
 git commit -m "chore: release v${VERSION}"
 git tag "v${VERSION}"
 
