@@ -28,29 +28,29 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
 anyhow = "1.0.102"
-chrono = "0.4.44"
+chrono = "0.4.45"
 clap = { version = "4.5.60", features = ["derive"] }
 clap_complete = "4.5.66"
 configparser = "3.1.0"
-console = "0.16.2"
+console = "0.16.3"
 dialoguer = { version = "0.12.0", features = ["fuzzy-select"] }
 dirs = "6.0.0"
 hex = "0.4.3"
 regex = "1.12.3"
 serde = { version = "1.0.228", features = ["derive"] }
-serde_json = "1.0.149"
+serde_json = "1.0.150"
 serde_yaml = "0.9.34"
 sha1 = "0.10.6"
 tabled = { version = "0.20.0", features = ["ansi"] }
 thiserror = "2.0.18"
 tracing = "0.1.44"
-tracing-subscriber = "0.3.22"
+tracing-subscriber = "0.3.23"
 
 [target.'cfg(unix)'.dependencies]
 skim = "3.7.0"
 
 [dev-dependencies]
-assert_cmd = "2.1.2"
+assert_cmd = "2.2.2"
 predicates = "3.1.4"
 temp-env = "0.3.6"
 tempfile = "3.26.0"

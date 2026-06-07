@@ -1,3 +1,14 @@
+## [unreleased]
+
+### 📚 Documentation
+
+- Update CONTRIBUTING.md with mise and automation instructions
+
+### ⚙️ Miscellaneous Tasks
+
+- Add mise, git-cliff configs and upgrade script
+- Update dependencies (cargo update)
+- Upgrade major dependencies
 # Changelog
 
 All notable changes to this project will be documented in this file.
