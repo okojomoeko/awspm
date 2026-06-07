@@ -52,9 +52,9 @@ ruby -e "
   content.gsub!(/version \".*?\"/, %Q{version \"$VERSION\"})
   
   # 各アーキテクチャごとのsha256を更新 (正規表現で対応するOS/CPUブロック内のsha256を置換)
-  content.sub!(/(if OS\.mac\? && Hardware::CPU\.intel\?.*?sha256 \")[^\"]+(\"/m) { \$1 + '$MAC_INTEL_SHA' + \$2 }
-  content.sub!(/(elsif OS\.mac\? && Hardware::CPU\.arm\?.*?sha256 \")[^\"]+(\"/m) { \$1 + '$MAC_ARM_SHA' + \$2 }
-  content.sub!(/(elsif OS\.linux\? && Hardware::CPU\.intel\?.*?sha256 \")[^\"]+(\"/m) { \$1 + '$LINUX_INTEL_SHA' + \$2 }
+  content.sub!(/(if OS\.mac\? && Hardware::CPU\.intel\?.*?sha256 \")[^\"]+(\")/m) { \$1 + '$MAC_INTEL_SHA' + \$2 }
+  content.sub!(/(elsif OS\.mac\? && Hardware::CPU\.arm\?.*?sha256 \")[^\"]+(\")/m) { \$1 + '$MAC_ARM_SHA' + \$2 }
+  content.sub!(/(elsif OS\.linux\? && Hardware::CPU\.intel\?.*?sha256 \")[^\"]+(\")/m) { \$1 + '$LINUX_INTEL_SHA' + \$2 }
   
   File.write('$FORMULA_FILE', content)
 "
